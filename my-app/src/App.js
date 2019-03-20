@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Redirect } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -29,17 +30,31 @@ class Clock extends Component {
   constructor(props) {
     super(props)
     //this.props = { date: new Date() };
+    this.state = {
+      redirect: false
+    }
+    this.redirectclick = this.redirectclick.bind(this);
   }
   componentWillMount() {
     //this.props = { date: new Date() };
-    console.log(this.props.date)
+    //console.log(this.props.date)
+  }
+  redirectclick() {
+    this.setState({
+      redirect: true
+    })
   }
   render() {
+    //let { redirect } = this.state;
     return (
-      <div>
-        <h1>helle, world!</h1>
-        <h2>现在是{this.props.date.toLocaleTimeString()}</h2>
-      </div>
+      this.state.redirect ?
+        <Redirect to='/clock2' />
+        :
+        <div>
+          <h1>helle, world!</h1>
+          <h2>现在是{this.props.date.toLocaleTimeString()}</h2>
+          <button onClick={this.redirectclick}>点击跳转clock2页面</button>
+        </div>
     )
   }
 }

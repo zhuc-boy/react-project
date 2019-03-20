@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import { Router } from 'react-router'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link,HashRouter } from 'react-router-dom';
 import './index.css';
 //import App, { Clocktwo } from './App';
 import { App, Clocktwo, Cl,Likebutton } from './App';
@@ -41,3 +41,4 @@ ReactDOM.render(<Nav />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+// BrowserRouter 和 HashRouter是react前端路由的两种模式。前者是html5history模式，后者是#哈希路由模式
