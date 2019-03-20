@@ -26,6 +26,14 @@ class App extends Component {
 }
 
 class Clock extends Component {
+  constructor(props) {
+    super(props)
+    //this.props = { date: new Date() };
+  }
+  componentWillMount() {
+    //this.props = { date: new Date() };
+    console.log(this.props.date)
+  }
   render() {
     return (
       <div>
@@ -35,7 +43,15 @@ class Clock extends Component {
     )
   }
 }
-
+class Cl extends Component {
+  render() {
+    return (
+      <div>
+        <Clock date={new Date()} />
+      </div>
+    )
+  }
+}
 //复合组建
 //组建类元素只能有一个顶层标签，否则会报错
 class Name extends Component {
@@ -119,12 +135,13 @@ class Likebutton extends Component {
     )
   }
 }
+/*
 function ListItem(props) {
   return <li>{props.value}</li>
 }
 class Numberlist extends Component {
   constructor(props) {
-    super();
+    super(props);
     //const numbers=props.numbers;
   }
   render() {
@@ -134,11 +151,12 @@ class Numberlist extends Component {
     });
     return (
       <ul>
-        {listItems} 
+        {listItems}
       </ul>
     )
   }
 }
+*/
 //JSX 允许在大括号中嵌入任何表达式
 /*
   const numbers = [1, 2, 3, 4, 5];
@@ -147,7 +165,9 @@ ReactDOM.render(
   document.getElementById('example')
 );
  */
-export { App }; export { Clock };
+export { App };
+export { Clock };
 export { Multicomponent };
 export { Clocktwo };
 export { Likebutton };
+export { Cl };
